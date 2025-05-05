@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carrusel de Imágenes</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #6e8efb, #a777e3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .carrusel {
+      position: relative;
+      width: 800px;
+      height: 500px;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      background: #fff;
+    }
+
+    .carrusel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .carrusel img.activa {
+      display: block;
+      animation: fadeIn 0.5s;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0.7; }
+      to { opacity: 1; }
+    }
+
+    .boton {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255,255,255,0.8);
+      color: #333;
+      border: none;
+      font-size: 24px;
+      padding: 20px;
+      cursor: pointer;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .izquierda {
+      left: 20px;
+    }
+
+    .derecha {
+      right: 20px;
+    }
+
+    .boton:hover {
+      background-color: white;
+      transform: translateY(-50%) scale(1.1);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="carrusel">
+    <img src="IMAGENES/1.jpg" class="activa" alt="Imagen 1">
+    <img src="IMAGENES/2.jpg" alt="Imagen 2">
+    <img src="IMAGENES/3.jpg" alt="Imagen 3">
+    <img src="IMAGENES/4.jpg" alt="Imagen 4">
+    <img src="IMAGENES/5.jpg" alt="Imagen 5">
+
+    <button class="boton izquierda" onclick="anterior()">←</button>
+    <button class="boton derecha" onclick="siguiente()">→</button>
+  </div>
+
+  <script>
+    // ... existing code ...
+  </script>
+
+</body>
+</html>
